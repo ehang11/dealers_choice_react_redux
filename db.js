@@ -12,7 +12,7 @@ const NFT = conn.define("NFTs", {
     type: STRING,
     allowNull: false,
     unique: true,
-    //defaultValue:
+    //defaultValue: faker.lorem.wo,
   },
   imgURL: {
     type: STRING,
