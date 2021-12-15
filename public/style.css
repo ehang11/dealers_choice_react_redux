@@ -1,0 +1,87 @@
+#app {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode";
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 5px 10px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.griditem {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 0px solid rgba(0, 0, 0, 0.8);
+  padding: 3px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nftContainer {
+  width: auto;
+  height: 35rem;
+  /* max-width: 40rem; */
+  padding: 5rem;
+  border: 2px solid black;
+  border-radius: 1px;
+  text-align: center;
+  color: black;
+}
+
+.singleNFTContainer {
+  width: auto;
+  height: 35rem;
+  align-content: center;
+}
+
+#nftImage {
+  width: 22rem;
+  height: 22rem;
+  border-radius: 1rem;
+  border: 0 solid black;
+  padding: 0;
+}
+
+#artistImage {
+  padding-top: 10px;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border-color: 10px solid black;
+  position: relative;
+  border-bottom: 30rem;
+}
+.title {
+  padding-top: 2rem;
+  font-weight: 600;
+  padding-bottom: 3rem;
+}
+
+/* HEADER/NAV BAR */
+.nav {
+  /* display: none; */
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: whitesmoke;
+  height: 3rem;
+}
+li {
+  margin: 20px;
+  display: inline;
+}
+
+.header {
+  float: left;
+  font-weight: 700;
+}
+
+/* BUTTON STYLES */
+.nav-button {
+  float: right;
+  height: 3rem;
+  width: 8rem;
+  background-color: whitesmoke;
+}
