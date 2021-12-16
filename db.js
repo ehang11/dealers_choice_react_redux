@@ -67,20 +67,32 @@ const syncAndSeed = async () => {
       imgURL:
         "https://lh3.googleusercontent.com/-1VbTF_qOdwTUTxW8KzJbFcMX0-mDF-BJM-gmmRl8ihvoo53PF_1z1m1snLXxwcxVFyJH7wk_kouq-KVyB55N9U=s0",
     });
+
+    const CloneX = await Artist.create({
+      name: "Clone X",
+      imgURL:
+        "https://lh3.googleusercontent.com/XN0XuD8Uh3jyRWNtPTFeXJg_ht8m5ofDx6aHklOiy4amhFuWUa0JaR6It49AH8tlnYS386Q0TW_-Lmedn0UET_ko1a3CbJGeu5iHMg=s130",
+    });
+
+    const Automeka = await Artist.create({
+      name: "Automeka",
+      imgURL:
+        "https://lh3.googleusercontent.com/6CS0frnjPEpvJ8hE3OG6_TbJFEC5YYThnZMdLTTmW-Z91lyYAJkPA7-ou2uE-b_J-cBUBeqWkI4HYKHEiu2PAyCT6wkYKzoeCyuy=s130",
+    });
     // const CryptoPunks = await Artist.create({
     //   name: "",
     //   imgURL: "",
     // });
 
     //Hardcoded data for Popular NFTs
-    const CryptoPunks_9998 = await NFT.create({
-      name: "CryptoPunk #9998",
+    const CloneX_13692 = await NFT.create({
+      name: "CloneX #13692",
       imgURL:
-        "https://lh3.googleusercontent.com/O0TPreCr-fnuhYTUGwHPfp3gZgqwAogRrdmkm60Aiozg9kTuyMeIKc_A0I_yBNIJfoISRuGllSHsatOjxxMWHMMxMOhMbpOJ43wM8A=w600",
-
-      author: CryptoPunks.imgURL,
-      price: 124457.06,
+        "https://lh3.googleusercontent.com/ojcTmd7Mjdk09vZrKC7KvmL0dVZUwVAAO_mR9dZOeQP68KaOqDaetKoLkTC-NFFYLsJy54qLNZdWzZ_ETQFeffK7fRF6uV1eIUQHIQ=w600",
+      author: CloneX.imgURL,
+      price: 20,
     });
+
     const CryptoPunks_7804 = await NFT.create({
       name: "CryptoPunk #7804",
       imgURL:
@@ -113,6 +125,15 @@ const syncAndSeed = async () => {
       author: SuperRare.imgURL,
       price: 1330,
     });
+
+    const CloneX_13784 = await NFT.create({
+      name: "CloneX #13784",
+      imgURL:
+        "https://lh3.googleusercontent.com/oZBv-8MB2M8aVinUrnGIbBElet1V11yXlF_1INXndEk-f-YQn4MemcERhjmrgMxDCkFyGv55HN3rCuOAwpSMxhMPVQ6NlWeeprj7=w600",
+      author: CloneX.imgURL,
+      price: 3.7,
+    });
+
     const SuperRare_All_Time_High_in_the_City = await NFT.create({
       name: "All Time High in the City",
       imgURL:
@@ -120,6 +141,23 @@ const syncAndSeed = async () => {
 
       author: SuperRare.imgURL,
       price: 1000,
+    });
+
+    const CryptoPunks_9998 = await NFT.create({
+      name: "CryptoPunk #9998",
+      imgURL:
+        "https://lh3.googleusercontent.com/O0TPreCr-fnuhYTUGwHPfp3gZgqwAogRrdmkm60Aiozg9kTuyMeIKc_A0I_yBNIJfoISRuGllSHsatOjxxMWHMMxMOhMbpOJ43wM8A=w600",
+
+      author: CryptoPunks.imgURL,
+      price: 124457.06,
+    });
+
+    const Automeka_Airdrop1 = await NFT.create({
+      name: "Automeka Airdrop",
+      imgURL:
+        "https://lh3.googleusercontent.com/C8wVNQbKAvPZeFW9kJupupE_FY1amttGpY4-KGNVn7OCeRjBFEs8aXHMxqmYK_KmbD6Y1xSkk6P_27WM2aw2LuMk-l_6oME98-ysTA=w600",
+      author: Automeka.imgURL,
+      price: 0.0005,
     });
   } catch (error) {
     console.log(error);

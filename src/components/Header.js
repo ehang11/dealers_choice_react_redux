@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 const Header = ({ selectedNFT, returnGallery }) => {
   return (
     <nav className="nav">
-      {/* <div className = "LOGO"> </div> */}
       <div className="header"> MetaGallery: NFT Art Gallery </div>
 
       <button
