@@ -31,13 +31,8 @@ app.get("/nft", async (req, res, next) => {
 });
 app.get("/nft/:id", async (req, res, next) => {
   try {
-    res.send(
-      await NFT.findOne({
-        where: {
-          id: req.params.id,
-        },
-      })
-    );
+    const nft = await NFT.findByPk(req.params.id);
+    res.send(nft);
   } catch (ex) {
     next(ex);
   }

@@ -5,25 +5,17 @@ import Header from "./Components/Header";
 import Gallery from "./Components/Gallery";
 import SelectedNFT from "./Components/SelectedNFT";
 import { connect } from "react-redux";
-import { nftReducer } from "./store";
+import { loadGallery, selectNFT } from "./store";
 
 class App extends React.Component {
-  //   constructor() {
-  //     super();
-  //     this.state = {
-  //       nft: [],
-  //       selectedNFT: "",
-  //     };
-  //   }
-
-  componentDidMount = async () => {
+  componentDidMount = () => {
     this.props.bootstrap();
 
-    window.addEventListener("hashchange", async () => {
-      const selected = window.location.hash.slice(1);
-      const selectedNFT = (await axios.get(`/nft/${selected}`)).data;
-      this.setState({ selectedNFT: selected });
-    });
+    // window.addEventListener("hashchange", async () => {
+    //   const selected = window.location.hash.slice(1);
+    //   const selectedNFT = (await axios.get(`/nft/${selected}`)).data;
+    //   this.setState({ selectedNFT: selected });
+    // });
   };
 
   render() {
@@ -31,7 +23,7 @@ class App extends React.Component {
       <div>
         <Header />
 
-        {this.props.selectedNFT.id ? <SelectedNFT /> : <Gallery />}
+        {this.props.selectedNFT ? <SelectedNFT /> : <Gallery />}
       </div>
     );
   }

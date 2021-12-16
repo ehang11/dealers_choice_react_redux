@@ -14,27 +14,37 @@ const loadGallery = () => {
 const deleteNFT = (NFTId) => {
   return async (dispatch) => {
     await axios.delete(`/nft/${NFTId}`);
-    dispatch({ type: "DELETE", NFTId });
+    dispatch({ type: "DELETE_NFT", NFTId });
   };
 };
-//ACTION REDUCERS
+const selectNFT = (NFTId) => {
+  return async (dispatch) => {
+    const selectedNFT = await axios.get(`/nft/${NFTId}`).data;
+    dispatch({ type: "SELECT_NFT", selectedNFT });
+  };
+};
+
+//ACTION REDUCERS(load, select, delete)
 const nftReducer = (state = [], action) => {
   switch (action.type) {
     case "LOAD_NFT":
       return (state = action.nft);
-    case "DELETE":
+    case "SELECT_NFT":
+      return (state = action.selectedNFT);
+    case "DELETE_NFT":
       return (state = state.filter((nft) => NFTId !== action.NFTId));
     default:
       return state;
   }
 };
+
 //COMBINEREDUCERS
 const reducer = combineReducers({
   nft: nftReducer,
 });
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
-export { deleteNFT, loadGallery };
+export { deleteNFT, selectNFT, loadGallery };
 
 export default store;

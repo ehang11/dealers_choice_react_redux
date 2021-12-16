@@ -14,4 +14,8 @@ const SelectedNFT = ({ selectedNFT }) => {
   );
 };
 
-export default SelectedNFT;
+const mapStateToProps = (state) => {
+  return state;
+};
+
+export default connect(mapStateToProps)(SelectedNFT);

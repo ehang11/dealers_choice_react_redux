@@ -1,5 +1,5 @@
 import React from "react";
-
+import { connect } from "react-redux";
 const Header = ({ selectedNFT, returnGallery }) => {
   return (
     <nav className="nav">
@@ -31,4 +31,8 @@ const Header = ({ selectedNFT, returnGallery }) => {
   );
 };
 
-export default Header;
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+export default connect(mapDispatchToProps)(Header);
