@@ -1,9 +1,13 @@
 # Dealers Choice: React/Redux
 
+![New Note](https://user-images.githubusercontent.com/13243146/146323189-6dbc0de1-575e-4d13-a366-9fbbb5f128d4.jpeg)
+
+
 - Project Title: MetaGallery: NFT Art Gallery
 - Purpose: Deploy a full-stack web application which displays a gallery of NFT Art
 
-# Project Structure/Project Stack
+# Project 
+Structure/Project Stack
 
 ## Backend
 
