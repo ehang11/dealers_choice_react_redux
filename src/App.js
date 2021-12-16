@@ -4,19 +4,20 @@ import axios from "axios";
 import Header from "./Components/Header";
 import Gallery from "./Components/Gallery";
 import SelectedNFT from "./Components/SelectedNFT";
+import { connect } from "react-redux";
+import { nftReducer } from "./store";
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      nft: [],
-      selectedNFT: "",
-    };
-  }
+  //   constructor() {
+  //     super();
+  //     this.state = {
+  //       nft: [],
+  //       selectedNFT: "",
+  //     };
+  //   }
 
   componentDidMount = async () => {
-    const nft = (await axios.get("/nft")).data;
-    this.setState({ nft });
+    this.props.bootstrap();
 
     window.addEventListener("hashchange", async () => {
       const selected = window.location.hash.slice(1);
@@ -25,34 +26,28 @@ class App extends React.Component {
     });
   };
 
-  chooseNFT = async (NFTId) => {
-    const selectedNFT = (await axios.get(`/nft/${NFTId}`)).data;
-    this.setState({ selectedNFT });
-  };
-
-  //CREATE NFT
-
-  //DELETE NFT
-  deleteNFT = async (NFTId) => {
-    await axios
-      .delete(`/nft/${NFTId}`)
-      .then((res) => this.setState({ nft: [...res.data] }))
-      .catch((err) => console.log(error));
-  };
-
   render() {
     return (
-      <div id="app">
+      <div>
         <Header />
 
-        {this.state.selectedNFT.id ? (
-          <SelectedNFT selectedNFT={this.state.selectedNFT} />
-        ) : (
-          <Gallery nft={this.state.nft} chooseNFT={this.chooseNFT} />
-        )}
+        {this.props.selectedNFT.id ? <SelectedNFT /> : <Gallery />}
       </div>
     );
   }
 }
 
-export default App;
+//map property
+const mapStateToProps = (state) => {
+  return state;
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    bootstrap: () => {
+      dispatch(loadGallery());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
