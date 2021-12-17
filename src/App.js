@@ -23,11 +23,7 @@ class App extends React.Component {
       <div>
         <Header />
 
-        {this.props.selectedNFT.id ? (
-          <SelectedNFT selectedNFT={selectedNFT} />
-        ) : (
-          <Gallery />
-        )}
+        {this.props.selectedNFT.id ? <SelectedNFT /> : <Gallery />}
       </div>
     );
   }
@@ -42,7 +38,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     bootstrap: () => {
       dispatch(loadGallery());
-      dispatch(selectNFT());
+      // dispatch(selectNFT());
     },
   };
 };

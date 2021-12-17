@@ -8,8 +8,8 @@ const {
   models: { NFT, Artist },
 } = require("./db");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+//app.use(express.json());
+//app.use(express.urlencoded({ extended: true }));
 
 app.use("/dist", express.static(path.join(__dirname, "dist")));
 app.use(express.static(path.join(__dirname, "public")));
@@ -31,8 +31,13 @@ app.get("/nft", async (req, res, next) => {
 });
 app.get("/nft/:id", async (req, res, next) => {
   try {
-    const nft = await NFT.findByPk(req.params.id);
-    res.send(nft);
+    res.send(
+      await NFT.findOne({
+        where: {
+          id: req.params.id,
+        },
+      })
+    );
   } catch (ex) {
     next(ex);
   }
@@ -62,8 +67,9 @@ app.get("/artist/:id", async (req, res, next) => {
     next(error);
   }
 });
+
 //POST
-app.post("/create", async (req, res, next) => {
+app.post("/nft/create", async (req, res, next) => {
   try {
     res.send(
       await NFT.create({

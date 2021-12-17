@@ -3,13 +3,15 @@ import { connect } from "react-redux";
 
 const SelectedNFT = ({ selectedNFT }) => {
   return (
-    <div className="singleNFTContainer">
-      <img id="nftImage" src={selectedNFT.imgURL} />
+    <div className="griditem">
+      <div className="singleNFTContainer" key={selectedNFT.id}>
+        <img id="singleImage " src={selectedNFT.imgURL} />
 
-      <div className="title">{selectedNFT.name}</div>
+        <div className="singleTitle">{selectedNFT.name}</div>
 
-      <img id="artistImage" src={selectedNFT.author} />
-      <div className="price">Current Price: {selectedNFT.price} ETH</div>
+        <img id="center" src={selectedNFT.author} />
+        <div className="price">Current Price: {selectedNFT.price} ETH</div>
+      </div>
     </div>
   );
 };

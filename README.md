@@ -2,11 +2,11 @@
 
 ![New Note](https://user-images.githubusercontent.com/13243146/146323189-6dbc0de1-575e-4d13-a366-9fbbb5f128d4.jpeg)
 
-
 - Project Title: MetaGallery: NFT Art Gallery
 - Purpose: Deploy a full-stack web application which displays a gallery of NFT Art
 
-# Project 
+# Project
+
 Structure/Project Stack
 
 ## Backend
@@ -26,4 +26,10 @@ Structure/Project Stack
 
 - `npm install`
 - `npm run start:dev`
-- `npm run seed` to seed the database
+
+## Functionality
+
+- View List of Available NFTs
+- View specific NFT Details
+- Delete NFT
+- Create NFT

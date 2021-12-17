@@ -91,6 +91,7 @@ const syncAndSeed = async () => {
         "https://lh3.googleusercontent.com/ojcTmd7Mjdk09vZrKC7KvmL0dVZUwVAAO_mR9dZOeQP68KaOqDaetKoLkTC-NFFYLsJy54qLNZdWzZ_ETQFeffK7fRF6uV1eIUQHIQ=w600",
       author: CloneX.imgURL,
       price: 20,
+      NFTId: 1,
     });
 
     const CryptoPunks_7804 = await NFT.create({
@@ -100,6 +101,7 @@ const syncAndSeed = async () => {
 
       author: CryptoPunks.imgURL,
       price: 4200,
+      NFTId: 2,
     });
     const Bored_Ape_Yacht_Club_2087 = await NFT.create({
       name: "2087",
@@ -108,6 +110,7 @@ const syncAndSeed = async () => {
 
       author: Bored_Ape_Yacht_Club.imgURL,
       price: 89.15,
+      NFTId: 3,
     });
     const Bored_Ape_Yacht_Club_3749 = await NFT.create({
       name: "3749",
@@ -116,6 +119,7 @@ const syncAndSeed = async () => {
 
       author: Bored_Ape_Yacht_Club.imgURL,
       price: 11.18,
+      NFTId: 4,
     });
     const SuperRare_A_Coin_for_the_Ferryman = await NFT.create({
       name: "A Coin for the Ferryman",
@@ -124,6 +128,7 @@ const syncAndSeed = async () => {
 
       author: SuperRare.imgURL,
       price: 1330,
+      NFTId: 5,
     });
 
     const CloneX_13784 = await NFT.create({
@@ -132,6 +137,7 @@ const syncAndSeed = async () => {
         "https://lh3.googleusercontent.com/oZBv-8MB2M8aVinUrnGIbBElet1V11yXlF_1INXndEk-f-YQn4MemcERhjmrgMxDCkFyGv55HN3rCuOAwpSMxhMPVQ6NlWeeprj7=w600",
       author: CloneX.imgURL,
       price: 3.7,
+      NFTId: 6,
     });
 
     const SuperRare_All_Time_High_in_the_City = await NFT.create({
@@ -141,6 +147,7 @@ const syncAndSeed = async () => {
 
       author: SuperRare.imgURL,
       price: 1000,
+      NFTId: 7,
     });
 
     const CryptoPunks_9998 = await NFT.create({
@@ -150,6 +157,7 @@ const syncAndSeed = async () => {
 
       author: CryptoPunks.imgURL,
       price: 124457.06,
+      NFTId: 8,
     });
 
     const Automeka_Airdrop1 = await NFT.create({
@@ -158,6 +166,7 @@ const syncAndSeed = async () => {
         "https://lh3.googleusercontent.com/C8wVNQbKAvPZeFW9kJupupE_FY1amttGpY4-KGNVn7OCeRjBFEs8aXHMxqmYK_KmbD6Y1xSkk6P_27WM2aw2LuMk-l_6oME98-ysTA=w600",
       author: Automeka.imgURL,
       price: 0.0005,
+      NFTId: 9,
     });
   } catch (error) {
     console.log(error);

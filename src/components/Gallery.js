@@ -11,6 +11,7 @@ const Gallery = ({ nft, selectNFT, deleteNFT }) => {
             <div className="nftContainer" key={nft.id}>
               <div onClick={() => selectNFT(nft.id)}>
                 <img id="nftImage" src={nft.imgURL} />
+                {nft.selectNFT}
               </div>
               <div className="title">{nft.name}</div>
               <img className="center" src={nft.author} />
